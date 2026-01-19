@@ -1,0 +1,76 @@
+﻿<Window
+    Width="425"
+    Height="250"
+    mc:Ignorable="d"
+    x:Name="Window"
+    Icon="Logo.ico"
+    Title="Notepad"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    x:Class="Notepad.QuestionWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Window.Resources>
+
+        <Style x:Key="StyleButton">
+            <Setter Property="Control.Width" Value="120" />
+            <Setter Property="Control.Margin" Value="3" />
+            <Setter Property="Control.Padding" Value="10, 5, 10, 5" />
+        </Style>
+
+    </Window.Resources>
+
+    <StackPanel
+        Orientation="Vertical"
+        VerticalAlignment="Center">
+
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
+
+            <Image
+                Width="75"
+                Margin="0, 0, 20, 0"
+                Source="Icons/Question.png" />
+
+            <TextBlock
+                x:Name="Question"
+                Width="250"
+                FontSize="15"
+                TextWrapping="Wrap"
+                VerticalAlignment="Center" />
+
+        </StackPanel>
+
+        <StackPanel
+            Margin="0, 40, 0, 0"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom">
+
+            <Button
+                x:Name="Save"
+                Content="Сохранить"
+                Click="Action_Click"
+                Style="{StaticResource StyleButton}" />
+
+            <Button
+                x:Name="NotSave"
+                Content="Не сохранять"
+                Click="Action_Click"
+                Style="{StaticResource StyleButton}" />
+
+            <Button
+                x:Name="Cancel"
+                Content="Отмена"
+                Click="Action_Click"
+                Style="{StaticResource StyleButton}" />
+
+        </StackPanel>
+
+    </StackPanel>
+
+</Window>

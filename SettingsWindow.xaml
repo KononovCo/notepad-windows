@@ -1,0 +1,219 @@
+﻿<Window
+    Width="500"
+    Height="325"
+    mc:Ignorable="d"
+    Icon="Logo.ico"
+    Title="Настройки"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    x:Class="Notepad.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Window.Resources>
+
+        <Style x:Key="StyleLabel">
+            <Setter Property="Control.Margin" Value="10, 0, 10, 0" />
+            <Setter Property="Control.HorizontalContentAlignment" Value="Right" />
+            <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="StyleSlider">
+            <Setter Property="Control.Width" Value="100" />
+            <Setter Property="Control.Margin" Value="0" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="StyleSmallButton">
+            <Setter Property="Control.Width" Value="22" />
+            <Setter Property="Control.Margin" Value="2" />
+            <Setter Property="Control.Padding" Value="0, 0, 0, 2" />
+            <Setter Property="Control.Background" Value="#FFF" />
+            <Setter Property="Control.BorderBrush" Value="#CCC" />
+            <Setter Property="Control.BorderThickness" Value="1" />
+        </Style>
+
+    </Window.Resources>
+
+    <StackPanel
+        Margin="10"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
+
+            <GroupBox Header="Цвет текста">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Content="Красный:"
+                        Foreground="#C00"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Slider
+                        x:Name="SliderRed"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Maximum="255"
+                        ValueChanged="Slider_ValueChanged"
+                        Style="{StaticResource StyleSlider}" />
+
+                    <Label
+                        x:Name="CountRed"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Content="0"
+                        Foreground="#C00"
+                        HorizontalContentAlignment="Left"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Button
+                        x:Name="DecreaseRed"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Content="-"
+                        Click="DecreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                    <Button
+                        x:Name="IncreaseRed"
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Content="+"
+                        Click="IncreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Content="Зелёный:"
+                        Foreground="#0C0"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Slider
+                        x:Name="SliderGreen"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Maximum="255"
+                        ValueChanged="Slider_ValueChanged"
+                        Style="{StaticResource StyleSlider}" />
+
+                    <Label
+                        x:Name="CountGreen"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Content="0"
+                        Foreground="#0C0"
+                        HorizontalContentAlignment="Left"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Button
+                        x:Name="DecreaseGreen"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Content="-"
+                        Click="DecreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                    <Button
+                        x:Name="IncreaseGreen"
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Content="+"
+                        Click="IncreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Content="Синий:"
+                        Foreground="#00C"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Slider
+                        x:Name="SliderBlue"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Maximum="255"
+                        ValueChanged="Slider_ValueChanged"
+                        Style="{StaticResource StyleSlider}" />
+
+                    <Label
+                        x:Name="CountBlue"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Content="0"
+                        Foreground="#00C"
+                        HorizontalContentAlignment="Left"
+                        Style="{StaticResource StyleLabel}" />
+
+                    <Button
+                        x:Name="DecreaseBlue"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Content="-"
+                        Click="DecreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                    <Button
+                        x:Name="IncreaseBlue"
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        Content="+"
+                        Click="IncreaseColorValue_Click"
+                        Style="{StaticResource StyleSmallButton}" />
+
+                </Grid>
+
+            </GroupBox>
+
+            <GroupBox Header="Образец">
+
+                <TextBlock
+                    x:Name="Sample"
+                    Text="Text"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    FontFamily="Consolas"
+                    Padding="20, 0, 20, 0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource StyleLabel}" />
+
+            </GroupBox>
+
+        </StackPanel>
+
+        <Button
+            x:Name="Apply"
+            Width="105"
+            Margin="0, 30, 0, 0"
+            Padding="7.5"
+            Content="Применить"
+            Click="Apply_Click" />
+
+    </StackPanel>
+
+</Window>

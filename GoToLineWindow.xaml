@@ -1,0 +1,99 @@
+﻿<Window
+    Width="350"
+    Height="250"
+    mc:Ignorable="d"
+    x:Name="Window"
+    Icon="Logo.ico"
+    ResizeMode="NoResize"
+    Title="Перейти"
+    x:Class="Notepad.GoToLineWindow"
+    WindowStartupLocation="CenterScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Window.Resources>
+
+        <Style x:Key="StyleLabel">
+            <Setter Property="Control.HorizontalAlignment" Value="Right" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+        </Style>
+
+    </Window.Resources>
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+
+        <Grid HorizontalAlignment="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Content="Максимальный номер:"
+                Style="{StaticResource StyleLabel}" />
+
+            <Label
+                x:Name="MaxLine"
+                Grid.Row="1"
+                Grid.Column="1"
+                Content="1"
+                HorizontalAlignment="Left"
+                Style="{StaticResource StyleLabel}" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Content="Минимальный номер:"
+                Style="{StaticResource StyleLabel}" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Content="1"
+                HorizontalAlignment="Left"
+                Style="{StaticResource StyleLabel}" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Content="Номер строки:"
+                Style="{StaticResource StyleLabel}" />
+
+            <TextBox
+                x:Name="TextBox"
+                Width="100"
+                Grid.Row="3"
+                Grid.Column="1"
+                MaxLength="10"
+                Padding="5"
+                VerticalContentAlignment="Center"
+                TextChanged="TextBox_TextChanged" />
+
+        </Grid>
+
+        <Button
+            x:Name="Button"
+            Content="Перейти"
+            Margin="0, 30, 0, 0"
+            Padding="25, 5, 25, 5"
+            Click="Button_Click"
+            HorizontalAlignment="Center" />
+
+    </StackPanel>
+
+</Window>
